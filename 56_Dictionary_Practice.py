@@ -143,3 +143,119 @@ print(student_status)
 
 
 
+
+
+
+
+# 🎯 Practie Q5 - 🔥 Next Challenge — Filter + Transform
+
+
+# Create a new dictionary called salary_category.
+ 
+# Rules:
+ 
+#       Salary >= 70000 → "High"
+#       Salary >= 50000 and < 70000 → "Medium"
+#       Salary < 50000 → "Low"
+
+
+'''
+employees = {
+    "Rohit": 65000,
+    "Amit": 45000,
+    "Rahul": 72000,
+    "Sneha": 55000,
+    "Priya": 90000
+}
+
+#Code ->
+
+salary_category = {}
+
+for employee , salary in employees.items():
+    if salary >= 700000:
+        salary_category[employee] = "High"
+    elif salary >= 50000:
+        salary_category[employee] = "Medium"
+    else:
+        salary_category[employee] = "Low"
+
+    print(f"{employee} -> {salary_category[employee]}")
+# print(salary_category)
+
+
+# Output ->
+            # Rohit -> Medium
+            # Amit -> Low
+            # Rahul -> Medium
+            # Sneha -> Medium
+            # Priya -> Medium
+            # {'Rohit': 'Medium', 'Amit': 'Low', 'Rahul': 'Medium', 'Sneha': 'Medium', 'Priya': 'Medium'}
+'''
+
+
+
+
+
+
+
+
+# 🎯 Practie Q5 - 🏁 Final Mixed Challenge — Last Practice Question
+
+# Task
+
+        # Create a new dictionary called eligible_employees.
+        
+        # An employee is eligible if their salary is 50,000 or more.
+         
+        # For eligible employees:
+         
+                # Store them in eligible_employees
+                # Count how many are eligible
+                # Calculate their total salary
+         
+        # Finally print:
+         
+                # Each eligible employee with salary
+                # Total eligible employee count
+                # Total salary
+                # The final eligible_employees dictionary
+
+'''
+# Code ->
+
+employees = {
+    "Rohit": 65000,
+    "Amit": 45000,
+    "Rahul": 72000,
+    "Sneha": 55000,
+    "Priya": 90000,
+    "Karan": 48000
+}
+
+
+eligible_employees = {}
+count, total = 0, 0
+
+
+for employee, salary in employees.items():
+    if salary >= 50000:
+        eligible_employees[employee] = salary
+        count += 1
+        total += salary
+        print(f"{employee} -> {salary}")
+print(f"Total Eligible Employees = {count}")
+print(f"Total Salary of Eligible Employees = {total}")
+print(eligible_employees)
+
+
+# Output ->
+#          Rohit -> 65000
+#          Rahul -> 72000
+#          Sneha -> 55000
+#          Priya -> 90000
+#          Total Eligible Employees = 4
+#          Total Salary of Eligible Employees = 282000
+#          {'Rohit': 65000, 'Rahul': 72000, 'Sneha': 55000, 'Priya': 90000}
+
+'''
