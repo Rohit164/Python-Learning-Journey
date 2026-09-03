@@ -86,3 +86,704 @@ We'll learn looping in this order:
 3. Loop through key-value pairs ⭐
 4. Dictionary problems using conditions
 5. Real-world practice challenges
+
+
+# Python Dictionary Views and Looping
+
+## 1. `keys()` Method
+
+The `keys()` method returns all keys present in a dictionary.
+
+### Syntax
+
+```python
+dictionary.keys()
+```
+
+### Example
+
+```python
+student = {
+    "name": "Rohit",
+    "age": 21,
+    "course": "Python"
+}
+
+print(student.keys())
+```
+
+### Output
+
+```text
+dict_keys(['name', 'age', 'course'])
+```
+
+### Important Points
+
+* Returns only dictionary keys.
+* Returns a `dict_keys` view object.
+* The view is dynamic, meaning changes in the dictionary are reflected automatically.
+
+Example:
+
+```python
+student = {
+    "name": "Rohit",
+    "age": 21
+}
+
+keys = student.keys()
+
+student["city"] = "Mumbai"
+
+print(keys)
+```
+
+Output:
+
+```text
+dict_keys(['name', 'age', 'city'])
+```
+
+### Convert Keys to List
+
+```python
+keys_list = list(student.keys())
+```
+
+This creates a separate list snapshot.
+
+--------------------------------------------------------------------------------------------------------------------
+
+# 2. `values()` Method
+
+The `values()` method returns all values present in a dictionary.
+
+### Syntax
+
+```python
+dictionary.values()
+```
+
+### Example
+
+```python
+student = {
+    "name": "Rohit",
+    "age": 21,
+    "course": "Python"
+}
+
+print(student.values())
+```
+
+### Output
+
+```text
+dict_values(['Rohit', 21, 'Python'])
+```
+
+### Important Points
+
+* Returns only dictionary values.
+* Returns a `dict_values` view object.
+* The view is dynamic.
+
+Example:
+
+```python
+values = student.values()
+
+student["city"] = "Mumbai"
+
+print(values)
+```
+
+The new value will automatically appear in the view.
+
+### Convert Values to List
+
+```python
+values_list = list(student.values())
+```
+
+This creates a separate list snapshot.
+
+--------------------------------------------------------------------------------------------------------------------
+
+# 3. `items()` Method
+
+The `items()` method returns both keys and values together.
+
+### Syntax
+
+```python
+dictionary.items()
+```
+
+### Example
+
+```python
+student = {
+    "name": "Rohit",
+    "age": 21,
+    "course": "Python"
+}
+
+print(student.items())
+```
+
+### Output
+
+```text
+dict_items([
+    ('name', 'Rohit'),
+    ('age', 21),
+    ('course', 'Python')
+])
+```
+
+Each item is represented as a tuple:
+
+```text
+(key, value)
+```
+
+### Convert Items to List
+
+```python
+items_list = list(student.items())
+```
+
+Output:
+
+```text
+[
+    ('name', 'Rohit'),
+    ('age', 21),
+    ('course', 'Python')
+]
+```
+
+--------------------------------------------------------------------------------------------------------------------
+
+# 4. Dynamic Views vs List Snapshot
+
+The following methods return dynamic views:
+
+```python
+dictionary.keys()
+dictionary.values()
+dictionary.items()
+```
+
+Dynamic means if the dictionary changes, the view also reflects the changes.
+
+Example:
+
+```python
+employee = {
+    "name": "Rohit",
+    "salary": 50000
+}
+
+values = employee.values()
+
+employee["city"] = "Mumbai"
+
+print(values)
+```
+
+Output:
+
+```text
+dict_values(['Rohit', 50000, 'Mumbai'])
+```
+
+However:
+
+```python
+values_list = list(employee.values())
+```
+
+creates a separate list.
+
+If the dictionary changes later, the list will not automatically change.
+
+### Remember
+
+```text
+dictionary.keys()          → Dynamic View
+dictionary.values()        → Dynamic View
+dictionary.items()         → Dynamic View
+
+list(dictionary.keys())    → Snapshot List
+list(dictionary.values())  → Snapshot List
+list(dictionary.items())   → Snapshot List
+```
+
+--------------------------------------------------------------------------------------------------------------------
+
+# 5. Looping Through Dictionary Keys
+
+When we directly loop through a dictionary, Python gives keys by default.
+
+### Method 1
+
+```python
+for key in dictionary:
+    print(key)
+```
+
+### Method 2
+
+```python
+for key in dictionary.keys():
+    print(key)
+```
+
+Both methods produce the same result.
+
+### Example
+
+```python
+employee = {
+    "name": "Rohit",
+    "department": "IT",
+    "salary": 65000
+}
+
+for key in employee:
+    print(key)
+```
+
+Output:
+
+```text
+name
+department
+salary
+```
+
+--------------------------------------------------------------------------------------------------------------------
+
+# 6. Looping Through Dictionary Values
+
+To loop through values, use `values()`.
+
+### Syntax
+
+```python
+for value in dictionary.values():
+    print(value)
+```
+
+### Example
+
+```python
+employee = {
+    "name": "Rohit",
+    "department": "IT",
+    "salary": 65000
+}
+
+for value in employee.values():
+    print(value)
+```
+
+Output:
+
+```text
+Rohit
+IT
+65000
+```
+
+--------------------------------------------------------------------------------------------------------------------
+
+# 7. Looping Through Keys and Values Together
+
+Use `items()` to access both keys and values.
+
+### Syntax
+
+```python
+for key, value in dictionary.items():
+    print(key, value)
+```
+
+### Example
+
+```python
+employee = {
+    "name": "Rohit",
+    "department": "IT",
+    "salary": 65000
+}
+
+for key, value in employee.items():
+    print(f"{key} -> {value}")
+```
+
+Output:
+
+```text
+name -> Rohit
+department -> IT
+salary -> 65000
+```
+
+## Tuple Unpacking
+
+`items()` returns:
+
+```text
+(key, value)
+```
+
+Python automatically unpacks them:
+
+```python
+for key, value in dictionary.items():
+```
+
+For example:
+
+```text
+("name", "Rohit")
+   ↓        ↓
+  key     value
+```
+
+--------------------------------------------------------------------------------------------------------------------
+
+# 8. Using Conditions While Looping
+
+We can apply conditions to dictionary values.
+
+Example:
+
+```python
+students = {
+    "Rohit": 85,
+    "Amit": 45,
+    "Rahul": 72,
+    "Sneha": 38
+}
+
+for name, marks in students.items():
+    if marks >= 50:
+        print(f"{name} -> {marks}")
+```
+
+Output:
+
+```text
+Rohit -> 85
+Rahul -> 72
+```
+
+--------------------------------------------------------------------------------------------------------------------
+
+# 9. Creating a Filtered Dictionary
+
+We can create a new dictionary containing only matching records.
+
+### Example: Passed Students
+
+```python
+students = {
+    "Rohit": 85,
+    "Amit": 45,
+    "Rahul": 72,
+    "Sneha": 38,
+    "Priya": 91
+}
+
+passed_students = {}
+
+for name, marks in students.items():
+    if marks >= 50:
+        passed_students[name] = marks
+
+print(passed_students)
+```
+
+Output:
+
+```text
+{'Rohit': 85, 'Rahul': 72, 'Priya': 91}
+```
+
+### Pattern
+
+```python
+new_dictionary = {}
+
+for key, value in dictionary.items():
+    if condition:
+        new_dictionary[key] = value
+```
+
+This is a very important pattern.
+
+--------------------------------------------------------------------------------------------------------------------
+# 10. Dictionary Transformation
+
+We can create a new dictionary by transforming values based on conditions.
+
+### Example: Student Pass/Fail Status
+
+```python
+students = {
+    "Rohit": 85,
+    "Amit": 45,
+    "Rahul": 72,
+    "Sneha": 38
+}
+
+student_status = {}
+
+for student, marks in students.items():
+    if marks >= 50:
+        student_status[student] = "Pass"
+    else:
+        student_status[student] = "Fail"
+
+print(student_status)
+```
+
+Output:
+
+```text
+{
+    'Rohit': 'Pass',
+    'Amit': 'Fail',
+    'Rahul': 'Pass',
+    'Sneha': 'Fail'
+}
+```
+
+### Pattern
+
+```python
+new_dictionary = {}
+
+for key, value in dictionary.items():
+    if condition:
+        new_dictionary[key] = new_value
+    else:
+        new_dictionary[key] = another_value
+```
+
+--------------------------------------------------------------------------------------------------------------------
+
+# 11. Multiple Conditions (`if / elif / else`)
+
+Example: Salary Categories
+
+```python
+employees = {
+    "Rohit": 65000,
+    "Amit": 45000,
+    "Rahul": 72000,
+    "Sneha": 55000,
+    "Priya": 90000
+}
+
+salary_category = {}
+
+for employee, salary in employees.items():
+
+    if salary >= 70000:
+        salary_category[employee] = "High"
+
+    elif salary >= 50000:
+        salary_category[employee] = "Medium"
+
+    else:
+        salary_category[employee] = "Low"
+
+print(salary_category)
+```
+
+Output:
+
+```text
+{
+    'Rohit': 'Medium',
+    'Amit': 'Low',
+    'Rahul': 'High',
+    'Sneha': 'Medium',
+    'Priya': 'High'
+}
+```
+
+--------------------------------------------------------------------------------------------------------------------
+
+# 12. Filtering + Counting + Total
+
+A common real-world pattern is:
+
+1. Filter records
+2. Store matching records
+3. Count them
+4. Calculate total
+
+### Example
+
+```python
+employees = {
+    "Rohit": 65000,
+    "Amit": 45000,
+    "Rahul": 72000,
+    "Sneha": 55000,
+    "Priya": 90000,
+    "Karan": 48000
+}
+
+eligible_employees = {}
+
+count = 0
+total = 0
+
+for employee, salary in employees.items():
+
+    if salary >= 50000:
+
+        eligible_employees[employee] = salary
+
+        count += 1
+
+        total += salary
+
+print(eligible_employees)
+
+print(f"Total Eligible Employees = {count}")
+
+print(f"Total Salary = {total}")
+```
+
+### Output
+
+```text
+{
+    'Rohit': 65000,
+    'Rahul': 72000,
+    'Sneha': 55000,
+    'Priya': 90000
+}
+
+Total Eligible Employees = 4
+
+Total Salary = 282000
+```
+
+--------------------------------------------------------------------------------------------------------------------
+
+# ⭐ Most Important Dictionary Looping Patterns
+
+## Pattern 1 — Keys
+
+```python
+for key in dictionary:
+    print(key)
+```
+
+## Pattern 2 — Values
+
+```python
+for value in dictionary.values():
+    print(value)
+```
+
+## Pattern 3 — Key + Value
+
+```python
+for key, value in dictionary.items():
+    print(key, value)
+```
+
+## Pattern 4 — Filter Dictionary
+
+```python
+result = {}
+
+for key, value in dictionary.items():
+    if condition:
+        result[key] = value
+```
+
+## Pattern 5 — Transform Dictionary
+
+```python
+result = {}
+
+for key, value in dictionary.items():
+    if condition:
+        result[key] = "Something"
+    else:
+        result[key] = "Something Else"
+```
+
+## Pattern 6 — Filter + Count + Total
+
+```python
+result = {}
+count = 0
+total = 0
+
+for key, value in dictionary.items():
+
+    if condition:
+
+        result[key] = value
+
+        count += 1
+
+        total += value
+```
+
+---
+
+# Final Quick Revision Table
+
+| Method / Concept                 | Purpose                      |
+| -------------------------------- | ---------------------------- |
+| `dict.keys()`                    | Get all keys                 |
+| `dict.values()`                  | Get all values               |
+| `dict.items()`                   | Get key-value pairs          |
+| `for key in dict`                | Loop through keys            |
+| `for value in dict.values()`     | Loop through values          |
+| `for key, value in dict.items()` | Loop through key-value pairs |
+| `{}`                             | Create empty dictionary      |
+| `new_dict[key] = value`          | Add key-value pair           |
+| `if`                             | Filter data                  |
+| `if/elif/else`                   | Categorize data              |
+| `count += 1`                     | Count matching records       |
+| `total += value`                 | Calculate total              |
+| `list(dict.keys())`              | Convert keys to list         |
+| `list(dict.values())`            | Convert values to list       |
+| `list(dict.items())`             | Convert items to list        |
+
+# Golden Rule
+
+```text
+Need Keys?
+→ keys()
+
+Need Values?
+→ values()
+
+Need Both Key and Value?
+→ items()
+
+Need to filter data?
+→ Loop + if
+
+Need a new dictionary?
+→ result[key] = value
+
+Need summary information?
+→ Use count and total
+```
