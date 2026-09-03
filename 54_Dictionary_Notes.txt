@@ -1,0 +1,88 @@
+1. del dict[key]
+   → Deletes a specific key-value pair
+   → Key missing = KeyError
+
+2. dict.pop(key)
+   → Deletes a specific key
+   → Returns its value
+   → Key missing = KeyError
+
+3. dict.pop(key, default)
+   → Deletes and returns value if key exists
+   → Returns default if key doesn't exist
+   → No error
+
+4. dict.popitem()
+   → Removes last inserted key-value pair
+   → Returns (key, value) tuple
+   → Empty dictionary = KeyError
+
+5. dict.clear()
+   → Removes all items
+   → Dictionary still exists as {}
+
+6. del dict
+   → Deletes the entire dictionary variable
+   → Using it afterward = NameError
+
+
+7. 📝`keys()`
+
+dictionary.keys()
+
+* Returns all keys
+* Returns a dict_keys view object
+* The view is dynamic and reflects dictionary changes
+
+If you want a normal list:
+
+list(dictionary.keys())
+
+* Creates a separate list of keys [key1, key2, ...]
+* Doesn't automatically update when the dictionary changes
+
+
+
+8. 📝`values()`
+
+dictionary.values()
+
+* Returns all values
+* Returns a dict_values view object
+* The view is dynamic and reflects dictionary changes
+
+If you want a normal list:
+
+list(dictionary.values())
+
+* Creates a separate list of values [value1, value2, ...]
+* Doesn't automatically update when the dictionary changes
+
+
+
+9. 📝`items()`
+
+dictionary.items()
+
+* Returns all keys and values pairs
+* Returns a dict_items view object
+* The view is dynamic and reflects dictionary changes
+
+If you want a normal list:
+
+list(dictionary.items())
+
+* Creates a separate list of items [(keys,values), ...]
+* Doesn't automatically update when the dictionary changes
+
+
+
+
+🚀 Next Topic: Looping Through Dictionaries
+We'll learn looping in this order:
+
+1. Loop through keys
+2. Loop through values
+3. Loop through key-value pairs ⭐
+4. Dictionary problems using conditions
+5. Real-world practice challenges
