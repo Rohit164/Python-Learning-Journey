@@ -49,6 +49,7 @@ for i in student.values():
 
 # 3️⃣ Looping Through Keys and Values Together ⭐
 
+'''
 student = {
     'name' : 'Rohit',
     'age' : 21,
@@ -57,9 +58,20 @@ student = {
 
 for i,j in student.items():
     print(i," ",j)
-
+'''
 
 
 
 
 # 🚀 Next Level: Dictionary Looping with Conditions
+
+employee = {
+    "Rohit": 65000,
+    "Amit": 45000,
+    "Rahul": 70000,
+    "Sneha": 55000
+}
+
+for name, salary in employee.items():
+    if salary > 50000:
+        print(name, "->", salary)
