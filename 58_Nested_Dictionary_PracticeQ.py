@@ -168,6 +168,7 @@ print(employees)            # {'emp1': {'name': 'Rohit', 'department': 'IT', 'sa
 
 # 🎯 Practice Q5 
 
+'''
 employees = {
     "emp1": {
         "name": "Rohit",
@@ -202,4 +203,46 @@ result = employees.pop('emp3','Not Found')
 print(result)
 
 # Print the final employees dictionary.
+print(employees)
+'''
+
+
+
+
+
+
+
+# 🎯 Practice Q6
+
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    }
+}
+
+# Task 1 - Use popitem() on emp2 and print the removed item.
+result = employees["emp2"].popitem()
+print(result)
+
+# Task 2 - Use popitem() on the main employees dictionary and print the removed employee.
+result = employees.popitem()
+print(result)
+
+# Task 3 - Use clear() on emp1.
+employees['emp1'].clear()
+print(employees["emp1"])
+
+# Task 4 - Print the final employees dictionary.
 print(employees)
