@@ -77,7 +77,7 @@ print(employees)
             # Change emp1 salary from 65000 → 70000
             # Change emp2 department from "HR" → "Human Resources"
             # Print the complete dictionary
-
+'''
 employees = {
     "emp1": {
         "name": "Rohit",
@@ -103,4 +103,103 @@ employees = {
 employees["emp1"]["salary"] = 70000
 employees["emp2"]["department"] = "Human Resource"
 
+print(employees)
+'''
+
+
+
+
+
+
+
+# 🎯 Practice Q4
+
+'''
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000,
+        "city":"Mumbai"
+    },
+
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000,
+        'experience':2
+    },
+
+    "emp3": {
+        "name":"Rahul",
+        "department":"Finance",
+        "experience":2
+    }
+}
+
+print(employees)
+
+
+# Task 1 => Delete "city" from emp1.
+
+del employees["emp1"]['city']
+print(employees["emp1"])        #    {'name': 'Rohit', 'department': 'IT', 'salary': 65000}
+
+
+
+# Task 2 => Delete "experience" from emp2.
+
+del employees["emp2"]["experience"]
+print(employees["emp2"])        #     {'name': 'Amit', 'department': 'HR', 'salary': 50000}
+
+
+
+# Task 3 => Delete the entire emp3 record.
+
+del employees["emp3"]
+print(employees)            # {'emp1': {'name': 'Rohit', 'department': 'IT', 'salary': 65000}, 'emp2': {'name': 'Amit', 'department': 'HR', 'salary': 50000}}
+'''
+
+
+
+
+
+
+
+# 🎯 Practice Q5 
+
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    }
+}
+
+
+
+# Use pop() to remove "salary" from emp1 and print the removed value.
+result = employees["emp1"].pop('salary','Not Found')
+print(result)
+
+
+# Safely try to remove "experience" from emp2, using "Not Available" as the default.
+result = employees['emp2'].pop('experience','Not Found')
+print(result)
+
+# Use pop() to remove the entire emp3 record and print what was removed.
+result = employees.pop('emp3','Not Found')
+print(result)
+
+# Print the final employees dictionary.
 print(employees)
