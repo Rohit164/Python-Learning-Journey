@@ -259,3 +259,112 @@ print(eligible_employees)
 #          {'Rohit': 65000, 'Rahul': 72000, 'Sneha': 55000, 'Priya': 90000}
 
 '''
+
+
+
+# 🎯 Practie Q7
+
+#                    emp1
+#                    name -> Rohit
+#                    department -> IT
+#                    salary -> 65000
+
+#                    emp2
+#                    name -> Amit
+#                    department -> HR
+#                    salary -> 50000
+
+#                    emp3
+#                    name -> Rahul
+#                    department -> Finance
+#                    salary -> 55000
+
+
+'''
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    }
+}
+
+
+
+for employee in employees:
+    print(employee)
+    for emp_id,details in employees[employee].items():
+        
+        print(f"{emp_id} -> {details}")
+'''
+
+
+
+# 🎯 Practie Q8 -> Using the same employees dictionary, print only employee names and salaries in this format:
+
+# Rohit -> 65000
+# Amit -> 50000
+# Rahul -> 55000
+
+'''
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    }
+}
+
+for emp_id in employees.keys():
+        salary = employees[emp_id]['salary']
+        name = employees[emp_id]['name']
+        print(f"{name} -> {salary}")
+'''
+
+# 🎯 Practie Q9 -> Print only employees whose salary is greater than or equal to 55000.
+
+
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    }
+}
+
+for emp_id in employees.keys():
+        salary = employees[emp_id]['salary']
+        name = employees[emp_id]['name']
+        if salary >= 55000:
+            print(f"{name} -> {salary}")
+

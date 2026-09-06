@@ -61,7 +61,7 @@ print(Students['Student1'])             #  {'name': 'Rohit', 'age': 21}
 
 
 
-# 🎯 Using pop() with Nested Dictionaries - It removes KEY and stores it value.
+# 🚀  Using pop() with Nested Dictionaries - It removes KEY and stores it value.
 
 '''
 employees = {
@@ -99,8 +99,9 @@ print(result)       # Not Available
 
 
 
-# 🎯 popitem() and clear() with Nested Dictionaries
+# 🚀 Looping Through Nested Dictionaries popitem() and clear() with Nested Dictionaries
 
+'''
 employees = {
     "emp1": {
         "name": "Rohit",
@@ -144,3 +145,131 @@ print(employees)
 
 employees.clear()
 print(employees)
+'''
+
+
+
+
+
+
+
+# 🚀 Looping Through Nested Dictionaries
+
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    }
+}
+
+#########################        Loop Through Outer Dictionary      #########################
+
+for emp_id in employees:
+    print(emp_id)
+# Output => 
+                # emp1
+                # emp2
+                # emp3
+
+
+print()
+
+
+for emp_id in employees.keys():
+    print(emp_id)
+# Output => 
+                # emp1
+                # emp2
+                # emp3
+
+
+print()
+
+
+for emp_id in employees.values():
+    print(emp_id)
+# Output => 
+            # {'name': 'Rohit', 'department': 'IT', 'salary': 65000}
+            # {'name': 'Amit', 'department': 'HR', 'salary': 50000}
+            # {'name': 'Rahul', 'department': 'Finance', 'salary': 55000}
+
+
+print()
+
+
+for emp_id,details in employees.items():
+    print(f"{emp_id} ->  {details}")
+
+# Output =>
+            # ('emp1', {'name': 'Rohit', 'department': 'IT', 'salary': 65000})
+            # ('emp2', {'name': 'Amit', 'department': 'HR', 'salary': 50000})
+            # ('emp3', {'name': 'Rahul', 'department': 'Finance', 'salary': 55000})
+
+
+print()
+
+
+
+
+#########################        Loop Through Inner Dictionary      #########################
+
+for emp_id in employees["emp1"]:
+    print(emp_id)
+
+# Output =>
+                # name
+                # department
+                # salary
+
+
+
+print()
+
+
+
+for emp_id in employees["emp1"].keys():
+    print(emp_id)
+
+# Output =>                
+                # name
+                # department
+                # salary
+
+
+
+print()
+
+
+
+for emp_id in employees["emp1"].values():
+    print(emp_id)
+
+# Output =>
+            # Rohit
+            # IT
+            # 65000
+
+
+print()
+
+
+for employee in employees:
+    print(employee)
+    for emp_id,details in employees["emp1"].items():
+        
+        print(f"{emp_id} -> {details}")
+# Output =>
+            # ('name', 'Rohit')
+            # ('department', 'IT')
+            # ('salary', 65000)
