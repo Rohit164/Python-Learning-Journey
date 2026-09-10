@@ -431,6 +431,7 @@ print(employees)
 
 # Task: Print the names of all employees who work in the IT department.
 
+'''
 
 employees = {
     "emp1": {
@@ -463,3 +464,149 @@ for employee,details in employees.items():
 
 
 # Output => Rohit
+
+'''
+
+
+
+
+
+
+
+# 🎯Practice Q12 : 
+
+# Task: Calculate and print the total salary of all employees.
+
+'''
+
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    },
+    "emp4": {
+        "name": "Neha",
+        "department": "Marketing",
+        "salary": 60000,
+        "city": "Mumbai"
+    }
+}
+
+total = 0
+
+for employee , details in employees.items():
+    total += details['salary'] 
+
+print(total)        # -> 230000
+
+'''
+
+
+
+
+
+
+# 🎯Practice Q13 :
+ 
+# Task : Count how many employees are in the IT department.
+# Task: Calculate the total salary of employees working in the IT department.
+
+'''
+
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    },
+    "emp4": {
+        "name": "Neha",
+        "department": "Marketing",
+        "salary": 60000,
+        "city": "Mumbai"
+    }
+}
+
+count = 0
+it_salary = 0
+for employee, details in employees.items():
+    if details['department'] == 'IT':
+        it_salary += details['salary']
+        count += 1
+        
+print(f"Count : {count}")
+print(f"IT Total Salary : {it_salary}")
+
+'''
+
+
+
+
+# 🎯Practice Q14 :
+ 
+
+
+# 📝 Task : Create a new nested dictionary named: high_paid_it_employees = {}
+
+# From the employees dictionary, add only those employees who satisfy both conditions:
+
+                            #1. Their department is "IT"
+                            #2. Their salary is greater than or equal to 60000
+
+
+'''
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    },
+    "emp4": {
+        "name": "Neha",
+        "department": "Marketing",
+        "salary": 60000,
+        "city": "Mumbai"
+    }
+}
+
+high_paid_it_employees = {}
+
+for employee,details in employees.items():
+    if details['department'] == 'IT' and details['salary'] >= 60000:
+        high_paid_it_employees[employee] = details
+print(high_paid_it_employees)
+
+# Output =>    {'emp1': {'name': 'Rohit', 'department': 'IT', 'salary': 65000}}
+
+'''
