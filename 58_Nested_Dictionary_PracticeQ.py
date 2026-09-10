@@ -213,7 +213,7 @@ print(employees)
 
 
 # 🎯 Practice Q6
-
+'''
 employees = {
     "emp1": {
         "name": "Rohit",
@@ -246,3 +246,220 @@ print(employees["emp1"])
 
 # Task 4 - Print the final employees dictionary.
 print(employees)
+'''
+
+
+
+
+
+
+
+
+
+# 🎯 Practice Q7
+
+# Task :
+        # Create a new dictionary called high_salary_employees.
+        # Add employees whose salary is >= 55000.
+
+'''
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    }
+}
+high_salary_employees = {}
+for employee , details in employees.items():
+    if employees[employee]['salary'] >= 55000:
+        high_salary_employees[employee] = details
+print(high_salary_employees)
+
+'''
+
+
+
+
+
+
+# 🎯 Practice Q8 : 
+
+# Task : Add a new employee "emp4" with:
+                
+                # name       → Neha
+                # department → Marketing
+                # salary     → 60000
+                # city       → Mumbai
+
+'''
+
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    }
+}
+
+employees["emp4"] = {
+    "name" : "Neha",
+    "department" : "Marketing",
+    "salary" : 60000,
+    "city" : "Mumbai"
+}
+
+print(employees)
+
+
+# Output =>     {'emp1': {'name': 'Rohit', 'department': 'IT', 'salary': 65000}, 'emp2': {'name': 'Amit', 'department': 'HR', 'salary': 50000}, 'emp3': {'name': 'Rahul', 'department': 'Finance', 'salary': 55000}, 'emp4': {'name': 'Neha', 'department': 'Marketing', 'salary': 60000, 'city': 'Mumbai'}}
+
+'''
+
+
+
+
+
+
+
+
+# 🎯Practice Q9 :  Next Question: Delete a nested key
+
+# Task -> Remove only the "city" information from emp4.
+
+'''
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    },
+    "emp4": {
+        "name": "Neha",
+        "department": "Marketing",
+        "salary": 60000,
+        "city": "Mumbai"
+    }
+}
+
+result = employees["emp4"].pop('city')
+print(result)
+print(employees)
+
+'''
+
+
+
+
+
+
+# 🎯Practice Q10 : 
+
+# Task: Delete the entire employee "emp3" from employees.
+
+'''
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    },
+    "emp4": {
+        "name": "Neha",
+        "department": "Marketing",
+        "salary": 60000,
+        "city": "Mumbai"
+    }
+}
+
+del employees['emp3']
+
+print(employees)
+
+# Output =>     {'emp1': {'name': 'Rohit', 'department': 'IT', 'salary': 65000}, 'emp2': {'name': 'Amit', 'department': 'HR', 'salary': 50000}, 'emp4': {'name': 'Neha', 'department': 'Marketing', 'salary': 60000, 'city': 'Mumbai'}}
+
+'''
+
+
+
+
+
+
+
+
+# 🎯Practice Q11 : 
+
+# Task: Print the names of all employees who work in the IT department.
+
+
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    },
+    "emp4": {
+        "name": "Neha",
+        "department": "Marketing",
+        "salary": 60000,
+        "city": "Mumbai"
+    }
+}
+
+
+for employee,details in employees.items():
+    if details['department'] == 'IT':
+        print(details['name'])
+
+
+# Output => Rohit

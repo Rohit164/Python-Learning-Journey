@@ -155,6 +155,7 @@ print(employees)
 
 # 🚀 Looping Through Nested Dictionaries
 
+'''
 employees = {
     "emp1": {
         "name": "Rohit",
@@ -273,3 +274,52 @@ for employee in employees:
             # ('name', 'Rohit')
             # ('department', 'IT')
             # ('salary', 65000)
+
+'''
+
+
+
+
+
+
+
+
+
+#############           🎯 Next: Updating values inside nested dictionaries                            #############
+
+
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 50000
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "Finance",
+        "salary": 55000
+    }
+}
+
+
+# 1.  Increase Rohit's salary from 65000 to 70000.
+
+employees["emp1"]['salary'] = 70000
+print(employees)
+
+# Output =>     {'emp1': {'name': 'Rohit', 'department': 'IT', 'salary': 70000}, 'emp2': {'name': 'Amit', 'department': 'HR', 'salary': 50000}, 'emp3': {'name': 'Rahul', 'department': 'Finance', 'salary': 55000}}
+
+
+
+
+# 2.  Add a "city" key for Amit (emp2) with the value "Pune".
+
+employees['emp2']['city'] = 'Pune'
+print(employees)
+
+# Output =>     {'emp1': {'name': 'Rohit', 'department': 'IT', 'salary': 70000}, 'emp2': {'name': 'Amit', 'department': 'HR', 'salary': 50000, 'city': 'Pune'}, 'emp3': {'name': 'Rahul', 'department': 'Finance', 'salary': 55000}}
