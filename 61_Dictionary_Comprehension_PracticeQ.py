@@ -89,3 +89,179 @@ print(even_squares)
 
 # Output -> {2: 4, 4: 16, 6: 36}
 '''
+
+
+#___________________________________________________________________________________________________________________________
+
+
+
+
+# 🎯 Practice Question 6 — if-else in Dictionary Comprehension
+
+# Create a dictionary called number_type where:
+
+# Key → the number
+# Value → "Even" if the number is even
+# Value → "Odd" if the number is odd
+
+
+'''
+numbers = [1, 2, 3, 4, 5]
+
+# {key: value_if_true if condition else value_if_false for item in iterable}
+result = {number : 'even' if number % 2 == 0 else 'odd' for number in numbers}
+print(result)
+'''
+
+
+
+#___________________________________________________________________________________________________________________________
+
+
+
+
+
+# 🎯 Practice Question 7 — Transform Values
+
+# Create a dictionary called number_status where:
+
+# Key → the number
+# If the number is even → value should be "Even Number"
+# If the number is odd → value should be "Odd Number"
+
+'''
+numbers = [1, 2, 3, 4, 5]
+
+
+number_status = {num : 'Even Number' if (num % 2 == 0) else 'Odd Number' for num in numbers}
+print(number_status)
+'''
+
+
+
+#___________________________________________________________________________________________________________________________
+
+
+
+
+# Practice Question 8 — Dictionary Comprehension + String
+
+
+# Create a dictionary called name_lengths where:
+
+# Key → name
+# Value → length of the name
+
+'''
+names = ["rohit", "amit", "rahul", "neha"]
+
+name_length = {name : len(name) for name in names }
+print(name_length)
+'''
+
+
+
+
+#___________________________________________________________________________________________________________________________
+
+# 🎯 Practice Question 9 — Dictionary Comprehension + Condition
+
+# Create a dictionary called number_squares using dictionary comprehension that contains only odd numbers and their squares.
+
+'''
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+numbers_squares = {num : num*num for num in numbers if num % 2 != 0}
+print(numbers_squares)
+'''
+
+
+
+#___________________________________________________________________________________________________________________________
+
+
+
+
+# 🎯 Practice Question 10 — if-else
+
+# Create a dictionary called number_status using dictionary comprehension.
+
+# Rules:
+
+# If the number is divisible by 3 → value should be "Divisible"
+# Otherwise → value should be "Not Divisible"
+
+
+'''
+numbers = [1, 2, 3, 4, 5, 6]
+
+number_status = {num : 'Divisible' if num % 3 == 0 else 'Not Divisible' for num in numbers}
+print(number_status)
+'''
+
+
+
+
+#___________________________________________________________________________________________________________________________
+
+
+
+
+
+# 🎯 Practice Question 11 — Slightly More Challenging
+
+# Create a new dictionary called discounted_prices using dictionary comprehension.
+
+# Rules:
+
+# If price is greater than or equal to 20000, give a 10% discount.
+# Otherwise, keep the original price.
+
+'''
+prices = {
+    "laptop": 50000,
+    "phone": 20000,
+    "tablet": 15000,
+    "watch": 5000
+}
+
+discounted_prices = {key :  value - value * 0.1 if value >= 20000 else value for key,value in prices.items() }
+print(discounted_prices)
+'''
+
+# Output = {'laptop': 45000.0, 'phone': 18000.0, 'tablet': 15000, 'watch': 5000}
+
+
+
+
+
+
+
+
+#___________________________________________________________________________________________________________________________
+
+
+
+
+
+# 🎯 Practice Question 12 — Final Challenge
+
+# Create a dictionary called results where:
+
+# Marks >= 40 → "Pass"
+# Marks < 40 → "Fail"
+
+
+
+'''
+students = {
+    "Rohit": 85,
+    "Amit": 42,
+    "Rahul": 73,
+    "Neha": 35,
+    "Priya": 91
+}
+
+result = {key : 'Pass' if marks >= 40 else 'Fail' for key,marks in students.items()}
+print(result)
+'''
