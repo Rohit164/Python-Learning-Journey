@@ -265,3 +265,66 @@ students = {
 result = {key : 'Pass' if marks >= 40 else 'Fail' for key,marks in students.items()}
 print(result)
 '''
+
+
+
+
+
+
+
+
+
+
+#___________________________________________________________________________________________________________________________
+#___________________________________________________________________________________________________________________________
+#___________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+# 🔥 Hard Mixed Question 1
+
+# 🎯 Task :
+
+# Create a new dictionary called it_employees containing only IT employees whose salary is ₹50,000 or more.
+# The new dictionary should preserve the complete employee details.
+
+employees = {
+    "emp1": {
+        "name": "Rohit",
+        "department": "IT",
+        "salary": 65000,
+        "experience": 2
+    },
+    "emp2": {
+        "name": "Amit",
+        "department": "HR",
+        "salary": 45000,
+        "experience": 3
+    },
+    "emp3": {
+        "name": "Rahul",
+        "department": "IT",
+        "salary": 55000,
+        "experience": 1
+    },
+    "emp4": {
+        "name": "Neha",
+        "department": "Finance",
+        "salary": 75000,
+        "experience": 4
+    },
+    "emp5": {
+        "name": "Priya",
+        "department": "IT",
+        "salary": 48000,
+        "experience": 2
+    }
+}
+
+
+it_employees = {key : value for key,value in employees.items() if value['salary'] >= 50000 and value['department'] == 'IT'}
+print(it_employees)
